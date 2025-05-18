@@ -1,5 +1,6 @@
 .gitignore
 .env
+hf_model_cache/
 data/
 app/__pycache__/
 tests/__pycache__/

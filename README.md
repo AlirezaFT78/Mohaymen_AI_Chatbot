@@ -33,8 +33,8 @@ This is a Retrieval-Augmented Generation (RAG) based Q&A system with Telegram in
 ### 1. 📁 Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/rag-telegram-bot.git
-cd rag-telegram-bot
+git clone https://github.com/AlirezaFT78/Mohaymen_AI_Chatbot.git
+cd mohaymen_chatbot
 ```
 
 ---
@@ -48,7 +48,7 @@ OPENAI_API_KEY="your_api_key_here"
 OPENAI_API_BASE="https://your_openai_base_url_here"
 TELEGRAM_BOT_TOKEN="your_telegram_bot_token_here"
 FASTAPI_URL="http://your_fastapi_url_here"
-TEST_CHAT_ID="your_test_chat_id_here"
+TEST_CHAT_ID="your_test_chat_id_here" 
 ```
 
 > In Docker, `FASTAPI_URL` should be set to: `http://fastapi:8000/ask`
