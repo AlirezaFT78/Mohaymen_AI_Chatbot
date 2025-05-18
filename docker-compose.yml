@@ -1,0 +1,21 @@
+
+services:
+  fastapi:
+    build:
+      context: .
+    container_name: rag-fastapi
+    ports:
+      - "8000:8000"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    working_dir: /app
+
+  bot:
+    build:
+      context: .
+    container_name: telegram-bot
+    command: python app/telegram_bot.py
+    working_dir: /app
+    depends_on:
+      - fastapi
+    environment:
+      - API_URL=http://fastapi:8000/ask
