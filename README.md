@@ -49,6 +49,7 @@ OPENAI_API_BASE="https://your_openai_base_url_here"
 TELEGRAM_BOT_TOKEN="your_telegram_bot_token_here"
 FASTAPI_URL="http://your_fastapi_url_here"
 TEST_CHAT_ID="your_test_chat_id_here" 
+LLM_MODEL="your_chosen_model"
 ```
 
 > In Docker, `FASTAPI_URL` should be set to: `http://fastapi:8000/ask`
