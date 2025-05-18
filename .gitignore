@@ -1,6 +1,4 @@
-.gitignore
 .env
-
 data/
 app/__pycache__/
 tests/__pycache__/

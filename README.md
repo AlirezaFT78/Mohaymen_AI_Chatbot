@@ -34,7 +34,7 @@ This is a Retrieval-Augmented Generation (RAG) based Q&A system with Telegram in
 
 ```bash
 git clone https://github.com/AlirezaFT78/Mohaymen_AI_Chatbot.git
-cd mohaymen_chatbot
+cd Mohaymen_AI_Chatbot
 ```
 
 ---
