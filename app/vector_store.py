@@ -16,6 +16,7 @@ def load_vector_store(chunk_size=500, overlap=100):
     if os.path.exists(FAISS_INDEX_PATH) and os.path.exists(DOCS_PATH) and os.path.exists(METADATA_PATH):
         index = faiss.read_index(FAISS_INDEX_PATH)
         document_chunks = np.load(DOCS_PATH, allow_pickle=True).tolist()
+        chunk_metadata = np.load(METADATA_PATH, allow_pickle=True).tolist()
         return
     
     documents = []

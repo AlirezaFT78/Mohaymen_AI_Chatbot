@@ -33,6 +33,6 @@ async def respond():
     return {"message": "Hello. This is Mohaymen Chatbot API"}
 
 
-@app.get("/")
-async def repond():
-    return {"messege": "Hello. This is Mohaymen Chatbot API"}
+@app.get("/health")
+async def health():
+    return {"status": "ok"}

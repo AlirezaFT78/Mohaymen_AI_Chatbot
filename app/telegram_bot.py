@@ -18,6 +18,7 @@ BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_input = update.message.text
+    await update.message.chat.send_action(action="typing")
     try:
         response = requests.post(API_URL, json={"query": user_input}, timeout=10)
         response.raise_for_status()
