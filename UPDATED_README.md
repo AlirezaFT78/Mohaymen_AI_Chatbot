@@ -1,3 +1,4 @@
+
 # 🧠 RAG-Based Telegram Question Answering Bot (Persian)
 
 This is a Retrieval-Augmented Generation (RAG) based Q&A system with Telegram integration. It answers Persian-language questions based on local document context using Google's **Gemini API** (via OpenAI-compatible endpoint), **FAISS vector search**, and a **Telegram bot interface**.
@@ -7,13 +8,15 @@ This is a Retrieval-Augmented Generation (RAG) based Q&A system with Telegram in
 ## 📦 Features
 
 - ✅ Persian question answering from `.txt` documents in `/data/`
-- ✅ FAISS vector search for efficient document retrieval
+- ✅ FAISS vector search with overlapping chunks and token-aware truncation
 - ✅ Gemini API (via `openai-python`) for LLM responses
-- ✅ FastAPI backend exposed via `/ask`
-- ✅ Real-time Telegram bot integration
-- ✅ Dockerized with Docker Compose
-- ✅ Tests for LLM, API, and bot interaction
+- ✅ FastAPI backend exposed via `/ask` endpoint with health checks
+- ✅ Real-time Telegram bot integration with anti-flooding
+- ✅ Dockerized with Docker Compose and volume persistence
 - ✅ Query caching with `lru_cache`
+- ✅ Tests for LLM, API, and bot interaction with mocking support
+- ✅ Supports Hugging Face model caching and `.env` config
+
 ---
 
 ## 🧰 Technologies Used
@@ -47,12 +50,10 @@ Create a `.env` file in the root directory:
 OPENAI_API_KEY="your_api_key_here"
 OPENAI_API_BASE="https://your_openai_base_url_here"
 TELEGRAM_BOT_TOKEN="your_telegram_bot_token_here"
-FASTAPI_URL="http://your_fastapi_url_here"
+FASTAPI_URL="http://fastapi:8000/ask"
 TEST_CHAT_ID="your_test_chat_id_here"
-LLM_MODEL="your_chosen_model_here"
+OPENAI_MODEL="gemini-2.0-flash-lite"
 ```
-
-> In Docker, `FASTAPI_URL` should be set to: `http://fastapi:8000/ask`
 
 ---
 
@@ -74,6 +75,8 @@ You can interact with the deployed chatbot via Telegram here:
 👉 [@Mohaymen_AI_Task_bot](https://t.me/Mohaymen_AI_Task_bot)
 
 Simply send a question in Persian (based on the loaded documents), and the bot will respond with a context-aware answer powered by Gemini and FAISS.
+
+---
 
 ## 🧪 Example Persian Q&A
 
@@ -130,3 +133,17 @@ pytest tests/
 ```
 
 ---
+
+## 📌 Future Improvements
+
+- Use Redis or persistent caching instead of in-memory
+- Use webhooks instead of polling for Telegram bot
+- Add document metadata in responses
+- Implement admin panel for document upload
+- Optimize Persian chunking with language-aware splitters
+
+---
+
+## 📃 License
+
+MIT License
