@@ -7,7 +7,7 @@ FAISS_INDEX_PATH = "./data/faiss.index"
 DOCS_PATH = "./data/chunks.npy"
 METADATA_PATH = "./data/chunks_metadata.npy"
 
-def load_vector_store(chunk_size=500, overlap=100):
+def load_vector_store(chunk_size=600, overlap=100):
     global model, index, document_chunks, chunk_metadata
 
     model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
